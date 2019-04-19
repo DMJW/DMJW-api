@@ -1,7 +1,7 @@
 module.exports = {
   mysqlHost: 'localhost',
   mysqlUser: 'root',
-  mysqlPassword: 'gnwk3182',
+  mysqlPassword: '',
   mysqlDatabase: 'dmjw',
   jwtSecret: 'dmjwrocks'
 };
