@@ -5,6 +5,7 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
+    "dotenv": "^7.0.0",
     "eslint": "^5.14.0",
     "eslint-config-4catalyzer-react": "^0.8.3",
     "eslint-loader": "^2.1.2",
@@ -13,6 +14,7 @@
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-standard": "^4.0.0",
+    "express": "^4.16.4",
     "greenlock-express": "^2.7.6",
     "jwt-simple": "^0.5.5",
     "mysql": "^2.16.0",

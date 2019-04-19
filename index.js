@@ -16,7 +16,7 @@ const lex = require("greenlock-express").create({
   }
 });
 
-const PORT = process.env.PORT || 80;
+const PORT = process.env.PORT || 3500;
 
 const server =
   process.env.NODE_ENV === "production"
