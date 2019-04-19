@@ -1,0 +1,37 @@
+{
+  "name": "dmjws-api",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "eslint": "^5.14.0",
+    "eslint-config-4catalyzer-react": "^0.8.3",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-flowtype": "^3.4.2",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-standard": "^4.0.0",
+    "greenlock-express": "^2.7.6",
+    "jwt-simple": "^0.5.5",
+    "mysql": "^2.16.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "password-hash": "^1.2.2"
+  },
+  "scripts": {
+    "start": "NODE_ENV=development nodemon api/index.js",
+    "server": "sudo forever -o api_out.log -e api_err.log start api/index.js",
+    "stop-server": "sudo forever stop api/index.js",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
