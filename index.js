@@ -1,17 +1,17 @@
-require("dotenv").config();
-const app = require("./app");
-const https = require("https");
-const http = require("http");
+require('dotenv').config();
+const app = require('./app');
+const https = require('https');
+const http = require('http');
 
-const lex = require("greenlock-express").create({
-  version: "draft-12",
-  server: "https://acme-v02.api.letsencrypt.org/directory",
-  email: "dmjw10806@gmail.com",
+const lex = require('greenlock-express').create({
+  version: 'draft-12',
+  server: 'https://acme-v02.api.letsencrypt.org/directory',
+  email: 'dmjw10806@gmail.com',
   agreeTos: true,
-  approveDomains: ["api.dmjws.website"],
+  approveDomains: ['api.dmjws.website'],
   challenges: {
-    "http-01": require("le-challenge-fs").create({
-      webrootPath: "/tmp/acme-challenges"
+    'http-01': require('le-challenge-fs').create({
+      webrootPath: '/tmp/acme-challenges'
     })
   }
 });
@@ -19,18 +19,18 @@ const lex = require("greenlock-express").create({
 const PORT = process.env.PORT || 3500;
 
 const server =
-  process.env.NODE_ENV === "production"
+  process.env.NODE_ENV === 'production'
     ? https.createServer(lex.httpsOptions, lex.middleware(app))
     : http.Server(app);
 
 server.listen(PORT, function() {
-  console.log("Server listening on port:", PORT);
+  console.log('Server listening on port:', PORT);
 });
 
-if (process.env.NODE_ENV === "production") {
-  require("http")
-    .createServer(lex.middleware(require("redirect-https")()))
+if (process.env.NODE_ENV === 'production') {
+  require('http')
+    .createServer(lex.middleware(require('redirect-https')()))
     .listen(80, function() {
-      console.log("Server listening on port:", 80);
+      console.log('Server listening on port:', 80);
     });
 }
