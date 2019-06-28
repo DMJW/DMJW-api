@@ -34,6 +34,11 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.post('/google', async (req, res) => {
+  console.log(req.body);
+  res.send({ success: true });
+});
+
 router.get('/session', requireAuth, async (req, res) => {
   const { user } = req;
   res.send({ userId: user.id, username: user.username });
