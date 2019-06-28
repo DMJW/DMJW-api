@@ -17,7 +17,6 @@ const lex = require('greenlock-express').create({
 });
 
 const PORT = process.env.PORT || 3500;
-
 const server =
   process.env.NODE_ENV === 'production'
     ? https.createServer(lex.httpsOptions, lex.middleware(app))
