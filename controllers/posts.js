@@ -1,8 +1,8 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
-const { poolQuery } = require("../helpers");
+const { poolQuery } = require('../helpers');
 
-router.get("/", async(req, res) => {
+router.get('/', async (req, res) => {
   try {
     const messages = await poolQuery(
       `SELECT a.id, a.userId, a.message, b.username FROM posts a JOIN users b ON a.userId = b.id`
@@ -14,7 +14,7 @@ router.get("/", async(req, res) => {
   }
 });
 
-router.post("/", async(req, res) => {
+router.post('/', async (req, res) => {
   try {
     const result = await poolQuery(`INSERT INTO posts SET ?`, {
       userId: req.body.userId,
