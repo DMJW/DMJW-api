@@ -35,7 +35,13 @@ router.post('/', async (req, res) => {
 });
 
 router.post('/google', async (req, res) => {
-  console.log(req.body);
+  const { profileObj, googleId } = req.body;
+  await poolQuery(`INSERT INTO users SET ?`, {
+    username: profileObj.name,
+    email: profileObj.email,
+    name: profileObj.givenName,
+    googleId: googleId
+  });
   res.send({ success: true });
 });
 
